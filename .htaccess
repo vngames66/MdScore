@@ -1,0 +1,26 @@
+Options +FollowSymlinks
+Options -Indexes
+<IfModule mod_rewrite.c>
+RewriteEngine on
+RewriteRule ^(home|admin|login|games|settings|logout|feed|tables|contact)?$ index.php?m=$1 [L]
+RewriteRule ^add/(.*)?$ index.php?m=add&type=$1 [L]
+RewriteRule ^table/edit/(.*)?$ index.php?m=table_edit&id=$1 [L]
+RewriteRule ^games/edit/(.*)?$ index.php?m=games_edit&id=$1 [L]
+RewriteRule ^table/delete/(.*)?$ index.php?m=table_delete&id=$1 [L]
+RewriteRule ^table/send/(.*)?$ index.php?m=table_send&id=$1 [L]
+RewriteRule ^json/(.*)?$ index.php?m=json&id=$1 [L]
+RewriteRule ^receive/(.*)?$ index.php?m=receive&id=$1 [L]
+RewriteRule ^rank/(.*)?$ index.php?m=rank&id=$1 [L]
+RewriteRule ^games/delete/(.*)?$ index.php?m=games_delete&id=$1 [L]
+RewriteRule ^table/(.*)?$ index.php?m=table&id=$1 [L]
+RewriteRule ^contact/(.*)?$ index.php?m=contact&id=$1 [L]
+RewriteRule ^home/(.*)?$ index.php?m=home&page=$1 [L]
+RewriteRule ^games/(.*)?$ index.php?m=games&page=$1 [L]
+RewriteRule ^tables/(.*)?$ index.php?m=tables&page=$1 [L]
+RewriteRule ^game/(.*)?$ index.php?m=game&id=$1 [L]
+RewriteRule ^game/(.*)/(.*)?$ index.php?m=game&id=$1&page=$2 [L]
+RewriteRule ^img/(.*)?$ includes/Theme/img/$1 [L]
+RewriteRule ^js/(.*)?$ includes/Theme/js/$1 [L]
+RewriteRule ^css/(.*)?$ includes/Theme/css/$1.css [L]
+RewriteRule ^font/(.*)?$ includes/Theme/font/$1 [L]
+</IfModule>
